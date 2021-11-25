@@ -3,13 +3,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 " general
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'ryanoasis/vim-devicons'
-Plug 'mkitt/tabline.vim'
+Plug 'akinsho/bufferline.nvim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'ray-x/lsp_signature.nvim'
-
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
@@ -37,7 +35,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
 
 " theme
-Plug 'altercation/vim-colors-solarized'
+Plug 'overcache/NeoSolarized'
 Plug 'nvim-lualine/lualine.nvim'
 
 " Initialize plugin system
@@ -57,14 +55,9 @@ luafile $HOME/.config/nvim/lua/lualine-config.lua
 luafile $HOME/.config/nvim/lua/nvim-tree-config.lua
 
 " LSP
-source $HOME/.config/nvim/config/lsp-config.vim
+luafile $HOME/.config/nvim/lua/lspconfig-config.lua
 luafile $HOME/.config/nvim/lua/cmp-config.lua
 
 " LSP LANGUAGUES
-luafile $HOME/.config/nvim/lua/languages/typescript.lua
-luafile $HOME/.config/nvim/lua/languages/eslint.lua
-luafile $HOME/.config/nvim/lua/languages/clangd.lua
-luafile $HOME/.config/nvim/lua/languages/php.lua
 luafile $HOME/.config/nvim/lua/languages/lua.lua
 luafile $HOME/.config/nvim/lua/languages/signature.lua
-luafile $HOME/.config/nvim/lua/languages/vimls.lua

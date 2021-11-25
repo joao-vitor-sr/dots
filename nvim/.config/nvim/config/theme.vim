@@ -1,2 +1,2 @@
 set nu rnu
-colorscheme solarized
+colorscheme NeoSolarized
