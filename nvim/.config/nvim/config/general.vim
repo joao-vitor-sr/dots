@@ -18,3 +18,6 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 set termguicolors
+
+autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank {higroup='Visual', timeout=500}
+

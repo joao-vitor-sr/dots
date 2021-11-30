@@ -5,7 +5,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'alvarosevilla95/luatab.nvim'
 Plug 'unblevable/quick-scope'
-Plug 'mhartington/formatter.nvim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -17,7 +16,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'onsails/lspkind-nvim' " icons
 Plug 'hrsh7th/cmp-calc'
-Plug 'tami5/lspsaga.nvim'
 
 " files
 Plug 'kyazdani42/nvim-tree.lua'
@@ -36,12 +34,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-repeat'
 
 " theme
 Plug 'overcache/NeoSolarized'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }  
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 
 " Initialize plugin system
 call plug#end()
@@ -54,6 +51,7 @@ source $HOME/.config/nvim/config/shortcuts.vim " SHORT CUTS
 source $HOME/.config/nvim/config/telescope.vim " TELESCOPE
 source $HOME/.config/nvim/config/nvim-tree-config.vim
 source $HOME/.config/nvim/config/quick-scope-config.vim
+source $HOME/.config/nvim/config/functions.vim
 
 " lua configs
 luafile $HOME/.config/nvim/lua/lualine-config.lua
@@ -72,6 +70,3 @@ luafile $HOME/.config/nvim/lua/nvim-treesitter-config.lua
 
 " LUA LINE
 luafile $HOME/.config/nvim/lua/luatab-config.lua
-
-" FORMATTER
-luafile $HOME/.config/nvim/lua/formatter-config.lua
