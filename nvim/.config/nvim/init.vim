@@ -46,18 +46,13 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 " Initialize plugin system
 call plug#end()
 
-source $HOME/.config/nvim/config/general.vim " GENERAL
-source $HOME/.config/nvim/config/theme.vim " THEME
-source $HOME/.config/nvim/config/vimwiki.vim " VIMWIKI
-source $HOME/.config/nvim/config/sessions.vim " SESSIONS
-source $HOME/.config/nvim/config/shortcuts.vim " SHORT CUTS
-source $HOME/.config/nvim/config/telescope.vim " TELESCOPE
-source $HOME/.config/nvim/config/nvim-tree-config.vim
-source $HOME/.config/nvim/config/quick-scope-config.vim
-
 " lua configs
+luafile $HOME/.config/nvim/lua/general.lua
 luafile $HOME/.config/nvim/lua/lualine-config.lua
 luafile $HOME/.config/nvim/lua/nvim-tree-config.lua
+
+source $HOME/.config/nvim/config/general.vim " GENERAL
+source $HOME/.config/nvim/config/sessions.vim " SESSIONS
 
 " LSP
 luafile $HOME/.config/nvim/lua/lspconfig-config.lua
@@ -69,9 +64,6 @@ luafile $HOME/.config/nvim/lua/languages/signature.lua
 
 " TREE SITTER
 luafile $HOME/.config/nvim/lua/nvim-treesitter-config.lua
-
-" LUA LINE
-luafile $HOME/.config/nvim/lua/luatab-config.lua
 
 " FORMATTER
 luafile $HOME/.config/nvim/lua/formatter-config.lua
