@@ -36,6 +36,7 @@ vim.api.nvim_set_keymap("n", "N", "Nzzzv", {noremap = true})
 vim.api.nvim_set_keymap("n", "Y", "y$", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "S", ":%s//g<Left><Left>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>s", ":s//g<Left><Left>", {})
 
 vim.api.nvim_set_keymap("n", "<ESC>", ":noh<CR>", {noremap = true})
 
@@ -43,11 +44,12 @@ vim.api.nvim_set_keymap("i", "<C-h>", "<esc>:m .+1<CR>==", {noremap = true})
 vim.api.nvim_set_keymap("i", "<C-t>", "<esc>:m .-2<CR>==", {noremap = true})
 vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", {noremap = true})
 vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", {noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>j ", ":m .+1<CR>==", {noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>k ", ":m .-2<CR>==", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>j", ":m .+1<CR>==", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>k", ":m .-2<CR>==", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "ZA", ":wqa!<CR>", {noremap = true})
 
 vim.api.nvim_command("let g:vimwiki_list = [{'path': '~/Documents/vimwiki'}]")
 
 require("luatab").setup {}
+

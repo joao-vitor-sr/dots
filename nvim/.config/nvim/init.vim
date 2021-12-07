@@ -6,6 +6,7 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'alvarosevilla95/luatab.nvim'
 Plug 'unblevable/quick-scope'
 Plug 'mhartington/formatter.nvim'
+Plug 'numToStr/Comment.nvim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -32,7 +33,6 @@ Plug 'hrsh7th/vim-vsnip-integ'
 
 " Tim pope plugins
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
@@ -67,3 +67,6 @@ luafile $HOME/.config/nvim/lua/nvim-treesitter-config.lua
 
 " FORMATTER
 luafile $HOME/.config/nvim/lua/formatter-config.lua
+
+" COMMENTER
+luafile $HOME/.config/nvim/lua/commenter.lua

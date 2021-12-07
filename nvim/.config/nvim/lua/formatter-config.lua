@@ -57,7 +57,8 @@ require("formatter").setup(
 					return {
 						exe = "luafmt",
 						args = {"--use-tabs", "--stdin"},
-						stdin = true
+						stdin = true,
+						display_errors = true
 					}
 				end
 			},
@@ -99,7 +100,7 @@ vim.api.nvim_exec(
 	[[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.ts,*.lua,*.c,*.cpp,*.h,*.md FormatWrite
+  autocmd BufWritePost *.ts,*.c,*.cpp,*.h,*.md,*.lua FormatWrite
 augroup END
 ]],
 	true

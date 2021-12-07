@@ -60,7 +60,7 @@ local on_attach = function(client, bufnr)
 	local opts = {noremap = true, silent = true}
 
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+	buf_set_keymap("n", "gD", "<cmd>Lspsaga preview_definition<CR>", opts)
 	buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	buf_set_keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
@@ -71,18 +71,14 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 	buf_set_keymap("n", "<space>rn", "<cmd>Lspsaga rename<cr>", opts)
 	buf_set_keymap("n", "<space>ca", "<cmd>Lspsaga code_action<cr>", opts)
-	buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	buf_set_keymap("n", "<space>gr", "<cmd>Lspsaga lsp_finder<cr>", opts)
 	buf_set_keymap("n", "<space>e", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 	buf_set_keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-	-- buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-	-- buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
 	buf_set_keymap("n", "]d", "<cmd>Lspsaga` diagnostic_jump_prev<CR>", opts)
 	buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 	buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
 local servers = {"tsserver", "eslint", "clangd", "intelephense", "vimls", "rls"}
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup {
