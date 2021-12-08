@@ -7,6 +7,7 @@ Plug 'alvarosevilla95/luatab.nvim'
 Plug 'unblevable/quick-scope'
 Plug 'mhartington/formatter.nvim'
 Plug 'numToStr/Comment.nvim'
+Plug 'joao-vitor-sr/nvimDvorak'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -50,9 +51,6 @@ call plug#end()
 luafile $HOME/.config/nvim/lua/general.lua
 luafile $HOME/.config/nvim/lua/lualine-config.lua
 luafile $HOME/.config/nvim/lua/nvim-tree-config.lua
-
-source $HOME/.config/nvim/config/general.vim " GENERAL
-source $HOME/.config/nvim/config/sessions.vim " SESSIONS
 
 " LSP
 luafile $HOME/.config/nvim/lua/lspconfig-config.lua
