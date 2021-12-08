@@ -3,3 +3,4 @@ nvim/.config/nvim/plugged/*
 
 mpd/.config/mpd/*
 !mpd/.config/mpd/mpd.conf
+ncmpcpp/.config/ncmpcpp/error.log
