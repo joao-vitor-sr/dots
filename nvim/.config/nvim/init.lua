@@ -10,6 +10,10 @@ require "paq" {
 	"joao-vitor-sr/nvimDvorak",
 	-- lsp
 	"neovim/nvim-lspconfig",
+	"hrsh7th/cmp-vsnip",
+	"hrsh7th/vim-vsnip-integ",
+	"hrsh7th/vim-vsnip",
+	"rafamadriz/friendly-snippets",
 	"ray-x/lsp_signature.nvim",
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/nvim-cmp",
@@ -17,17 +21,12 @@ require "paq" {
 	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-cmdline",
 	"onsails/lspkind-nvim", -- icons
-	"hrsh7th/cmp-calc",
 	"tami5/lspsaga.nvim",
 	-- files
 	"kyazdani42/nvim-tree.lua",
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope.nvim",
 	"vimwiki/vimwiki",
-	-- snippets
-	"hrsh7th/vim-vsnip",
-	"hrsh7th/cmp-vsnip",
-	"hrsh7th/vim-vsnip-integ",
 	-- Tim pope plugins
 	"tpope/vim-sensible",
 	"tpope/vim-fugitive",
@@ -35,7 +34,7 @@ require "paq" {
 	"tpope/vim-obsession",
 	"tpope/vim-repeat",
 	-- theme
-	"overcache/NeoSolarized",
+	"shaunsingh/nord.nvim",
 	"nvim-lualine/lualine.nvim",
 	{"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 }
@@ -55,7 +54,6 @@ require("signature")
 
 -- TREE SITTER
 require("nvim-treesitter-config")
-
 -- FORMATTER
 require("formatter-config")
 

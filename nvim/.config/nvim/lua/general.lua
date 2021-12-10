@@ -13,7 +13,7 @@ vim.api.nvim_command("set termguicolors")
 vim.api.nvim_command("set encoding=UTF-8")
 
 vim.api.nvim_command("set nu rnu")
-vim.api.nvim_command("colorscheme NeoSolarized")
+vim.api.nvim_command("colorscheme nord")
 
 vim.api.nvim_command("let g:qs_highlight_on_keys = []")
 
@@ -53,10 +53,21 @@ vim.api.nvim_command("let g:vimwiki_list = [{'path': '~/Documents/vimwiki'}]")
 
 require("luatab").setup {}
 
-vim.api.nvim_command('au BufReadPost,BufNewFile /home/joao-vitor-sr/codes/php/desenvolvimento/* set tabstop=2 shiftwidth=2 expandtab smarttab')
-vim.api.nvim_command("autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank {higroup='Visual', timeout=500}")
+vim.api.nvim_command(
+	"au BufReadPost,BufNewFile /home/joao-vitor-sr/codes/php/desenvolvimento/* set tabstop=2 shiftwidth=2 expandtab smarttab"
+)
+vim.api.nvim_command(
+	"autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank {higroup='Visual', timeout=500}"
+)
 
 vim.api.nvim_command("let g:session_dir = '~/.config/nvim/sessions'")
 vim.api.nvim_command("exec 'nnoremap <Leader>ss :Obsession ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'")
 vim.api.nvim_set_keymap("n", "<leader>sp", ":Obsession<CR>", {noremap = true})
 vim.api.nvim_command("exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'")
+
+vim.api.nvim_command("let g:vsnip_filetypes = {}")
+vim.api.nvim_command("let g:vsnip_filetypes.javascript = ['javascript']")
+vim.api.nvim_command("let g:vsnip_filetypes.javascriptreact = ['javascriptreact']")
+vim.api.nvim_command("let g:vsnip_filetypes.typescriptreact = ['typescriptreact']")
+vim.api.nvim_command("let g:vsnip_filetypes.c = ['c']")
+vim.api.nvim_command("let g:vsnip_filetypes.php = ['php']")

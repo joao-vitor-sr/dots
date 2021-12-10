@@ -4,6 +4,18 @@ vim.opt.completeopt = {"menu", "menuone", "noselect"}
 local cmp = require "cmp"
 local cmp_buffer = require("cmp_buffer")
 
+local lspkind = require "lspkind"
+lspkind.init()
+
+local feedkey = function(key, mode)
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+end
+
+local has_words_before = function()
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
 cmp.setup(
 	{
 		completion = {
@@ -14,13 +26,13 @@ cmp.setup(
 			native_menu = false
 		},
 		formatting = {
-			format = require("lspkind").cmp_format {
+			format = lspkind.cmp_format {
 				with_text = true,
 				menu = {
 					nvim_lsp = "[LSP]",
 					buffer = "[Buffer]",
 					nvim_lua = "[Lua]",
-					ultisnips = "[UltiSnips]",
+					-- ultisnips = "[UltiSnips]",
 					treesitter = "[treesitter]",
 					look = "[Look]",
 					path = "[Path]",
@@ -63,38 +75,47 @@ cmp.setup(
 			["<Down>"] = cmp.mapping.select_next_item {behavior = cmp.SelectBehavior.Select},
 			["<Up>"] = cmp.mapping.select_prev_item {behavior = cmp.SelectBehavior.Select},
 			["<C-Period>"] = cmp.mapping.close(),
-			["<c-space>"] = cmp.mapping {
-				i = cmp.mapping.complete(),
-				c = function(_ --[[fallback]])
-					if cmp.visible() then
-						if not cmp.confirm {select = true} then
-							return
-						end
-					else
-						cmp.complete()
-					end
-				end
-			},
+			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
 			["<C-f>"] = cmp.mapping.confirm {
 				behavior = cmp.ConfirmBehavior.Replace,
 				select = true
 			},
-			["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), {"i", "s"}),
-			["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "s"})
+			["<Tab>"] = cmp.mapping(
+				function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+					elseif vim.fn["vsnip#available"](1) == 1 then
+						feedkey("<Plug>(vsnip-expand-or-jump)", "")
+					elseif has_words_before() then
+						cmp.complete()
+					else
+						fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+					end
+				end,
+				{"i", "s"}
+			),
+			["<S-Tab>"] = cmp.mapping(
+				function()
+					if cmp.visible() then
+						cmp.select_prev_item()
+					elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+						feedkey("<Plug>(vsnip-jump-prev)", "")
+					end
+				end,
+				{"i", "s"}
+			),
+			-- ... Your other mappings ...
+			["<CR>"] = cmp.mapping.confirm({select = true})
 		},
+		-- REQUIRED - you must specify a snippet engine
 		snippet = {
-			-- REQUIRED - you must specify a snippet engine
 			expand = function(args)
 				vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-				-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-				-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-				-- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
 			end
 		},
 		sources = {
 			{name = "nvim_lsp"},
-			{name = "vsnip"},
-			{name = "calc"},
+			{name = "vsnip"}, -- For vsnip users.
 			{name = "path"},
 			{name = "buffer", keyword_length = 5}
 		},

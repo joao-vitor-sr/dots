@@ -41,6 +41,16 @@ require("formatter").setup(
 					}
 				end
 			},
+			typescriptreact = {
+				--prettier
+				function()
+					return {
+						exe = "prettier",
+						args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote"},
+						stdin = true
+					}
+				end
+			},
 			rust = {
 				-- Rustfmt
 				function()
@@ -100,7 +110,7 @@ vim.api.nvim_exec(
 	[[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.ts,*.c,*.cpp,*.h,*.md,*.lua FormatWrite
+  autocmd BufWritePost *.ts,*.tsx,*.c,*.cpp,*.h,*.md,*.lua,*.rs FormatWrite
 augroup END
 ]],
 	true

@@ -17,11 +17,11 @@
 ;==========================================================
 
 [colors]
-background = #002b36
+background = #2E3440
 background-alt = #fff
-foreground = #93a1a1
+foreground = #D8DEE9
 foreground-alt = #eee8d5
-primary = #ffb52a
+primary = #ff52a
 secondary = #e60053
 alert = #bd2c40
 
@@ -127,7 +127,7 @@ label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 label-empty = %name%
-label-empty-foreground = #55aa55
+label-empty-foreground = #88C0D0
 label-empty-padding = 2
 bar-fill-font = 2
 bar-indicator-font = 2
@@ -241,11 +241,11 @@ format-muted-foreground = ${colors.foreground}
 label-muted = muteado
  
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-0 = #88C0D0
+bar-volume-foreground-1 = #88C0D0
+bar-volume-foreground-2 = #88C0D0
+bar-volume-foreground-3 = #88C0D0
+bar-volume-foreground-4 = #88C0D0
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
@@ -273,11 +273,11 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-0 = #88C0D0
+bar-volume-foreground-1 = #88C0D0
+bar-volume-foreground-2 = #88C0D0
+bar-volume-foreground-3 = #88C0D0
+bar-volume-foreground-4 = #88C0D0
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
