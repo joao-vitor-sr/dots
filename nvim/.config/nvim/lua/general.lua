@@ -49,8 +49,6 @@ vim.api.nvim_set_keymap("n", "<leader>k", ":m .-2<CR>==", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "ZA", ":wqa!<CR>", {noremap = true})
 
-vim.api.nvim_command("let g:vimwiki_list = [{'path': '~/Documents/vimwiki'}]")
-
 require("luatab").setup {}
 
 vim.api.nvim_command(

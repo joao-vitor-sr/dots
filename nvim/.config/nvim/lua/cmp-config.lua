@@ -32,14 +32,12 @@ cmp.setup(
 					nvim_lsp = "[LSP]",
 					buffer = "[Buffer]",
 					nvim_lua = "[Lua]",
-					-- ultisnips = "[UltiSnips]",
+					luasnip = "[LuaSnip]",
 					treesitter = "[treesitter]",
 					look = "[Look]",
 					path = "[Path]",
 					spell = "[Spell]",
-					calc = "[Calc]",
-					emoji = "[Emoji]",
-					neorg = "[Neorg]"
+					calc = "[Calc]"
 				}
 			}
 		},
@@ -72,14 +70,8 @@ cmp.setup(
 					end
 				end
 			},
-			["<Down>"] = cmp.mapping.select_next_item {behavior = cmp.SelectBehavior.Select},
-			["<Up>"] = cmp.mapping.select_prev_item {behavior = cmp.SelectBehavior.Select},
 			["<C-Period>"] = cmp.mapping.close(),
 			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
-			["<C-f>"] = cmp.mapping.confirm {
-				behavior = cmp.ConfirmBehavior.Replace,
-				select = true
-			},
 			["<Tab>"] = cmp.mapping(
 				function(fallback)
 					if cmp.visible() then
@@ -116,8 +108,7 @@ cmp.setup(
 		sources = {
 			{name = "nvim_lsp"},
 			{name = "vsnip"}, -- For vsnip users.
-			{name = "path"},
-			{name = "buffer", keyword_length = 5}
+			-- {name = "buffer", keyword_length = 5}
 		},
 		sorting = {
 			comparators = {

@@ -2,7 +2,7 @@ vim.g.mapleader = ","
 
 require "paq" {
 	-- general
-	"kyazdani42/nvim-web-devicons",
+	"kyazdani42/nvim-web-devicons", -- icons
 	"alvarosevilla95/luatab.nvim",
 	"unblevable/quick-scope",
 	"mhartington/formatter.nvim",
@@ -20,13 +20,12 @@ require "paq" {
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-cmdline",
-	"onsails/lspkind-nvim", -- icons
+	"onsails/lspkind-nvim", -- cmp menu
 	"tami5/lspsaga.nvim",
 	-- files
 	"kyazdani42/nvim-tree.lua",
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope.nvim",
-	"vimwiki/vimwiki",
 	-- Tim pope plugins
 	"tpope/vim-sensible",
 	"tpope/vim-fugitive",
