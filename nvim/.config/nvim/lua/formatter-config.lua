@@ -11,7 +11,7 @@ require("formatter").setup(
 					}
 				end
 			},
-			md = {
+			markdown = {
 				-- prettier
 				function()
 					return {
