@@ -8,6 +8,8 @@ require "paq" {
 	"mhartington/formatter.nvim",
 	"numToStr/Comment.nvim",
 	"joao-vitor-sr/nvimDvorak",
+	"MunifTanjim/nui.nvim",
+	"vuki656/package-info.nvim",
 	-- lsp
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-vsnip",
@@ -42,6 +44,7 @@ require "paq" {
 require("general")
 require("lualine-config")
 require("nvim-tree-config")
+require("package-info-config")
 
 -- LSP
 require("lspconfig-config")
@@ -58,3 +61,4 @@ require("formatter-config")
 
 -- COMMENTER
 require("commenter")
+
