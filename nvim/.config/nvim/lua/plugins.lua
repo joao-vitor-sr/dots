@@ -36,7 +36,6 @@ return require("packer").startup(
 
 		-- Tim pope plugins
 		use "tpope/vim-sensible"
-		use "tpope/vim-fugitive"
 		use "tpope/vim-surround"
 		use "tpope/vim-obsession"
 		use "tpope/vim-repeat"
