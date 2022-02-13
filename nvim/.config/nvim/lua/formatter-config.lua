@@ -21,6 +21,16 @@ require("formatter").setup(
 					}
 				end
 			},
+			php = {
+				-- prettier
+				function()
+					return {
+						exe = "prettier",
+						args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--use-tabs"},
+						stdin = true
+					}
+				end
+			},
 			javascript = {
 				-- prettier
 				function()
@@ -101,6 +111,24 @@ require("formatter").setup(
 						stdin = true
 					}
 				end
+			},
+			go = {
+				-- gnu-format (indent)
+				function()
+					return {
+						exe = "gofmt",
+						stdin = true
+					}
+				end
+			},
+			haskell = {
+				-- gnu-format (indent)
+				function()
+					return {
+						exe = "ormolu",
+						stdin = true
+					}
+				end
 			}
 		}
 	}
@@ -110,7 +138,7 @@ vim.api.nvim_exec(
 	[[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.ts,*.js,*.tsx,*.c,*.cpp,*.md,*.lua,*.rs silent FormatWrite
+  autocmd BufWritePost *.ts,*.tsx,*.c,*.cpp,*.md,*.lua,*.rs,*.go silent FormatWrite
 augroup END
 ]],
 	true

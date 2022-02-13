@@ -72,7 +72,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
-local servers = {"tsserver", "eslint", "clangd", "intelephense"}
+local servers = {"tsserver", "eslint", "clangd", "intelephense", "hls"}
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup {
 		on_attach = on_attach,

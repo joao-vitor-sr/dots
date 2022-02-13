@@ -69,4 +69,3 @@ vim.api.nvim_command("let g:vsnip_filetypes.javascriptreact = ['javascriptreact'
 vim.api.nvim_command("let g:vsnip_filetypes.typescriptreact = ['typescriptreact']")
 vim.api.nvim_command("let g:vsnip_filetypes.c = ['c']")
 vim.api.nvim_command("let g:vsnip_filetypes.php = ['php']")
-

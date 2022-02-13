@@ -5,8 +5,14 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(
 	function()
-		-- general
 		use "wbthomason/packer.nvim"
+		-- Tim pope plugins
+		use "tpope/vim-sensible"
+		use "tpope/vim-surround"
+		use "tpope/vim-obsession"
+		use "tpope/vim-repeat"
+
+		-- general
 		use "kyazdani42/nvim-web-devicons" -- icons
 		use "alvarosevilla95/luatab.nvim"
 		use "unblevable/quick-scope"
@@ -22,6 +28,7 @@ return require("packer").startup(
 		use "rafamadriz/friendly-snippets"
 		use "ray-x/lsp_signature.nvim"
 		use "hrsh7th/cmp-nvim-lsp"
+		-- use "~/codes/lua/nvim-cmp"
 		use "hrsh7th/nvim-cmp"
 		use "hrsh7th/cmp-buffer"
 		use "hrsh7th/cmp-path"
@@ -33,12 +40,6 @@ return require("packer").startup(
 		use "kyazdani42/nvim-tree.lua"
 		use "nvim-lua/plenary.nvim"
 		use "nvim-telescope/telescope.nvim"
-
-		-- Tim pope plugins
-		use "tpope/vim-sensible"
-		use "tpope/vim-surround"
-		use "tpope/vim-obsession"
-		use "tpope/vim-repeat"
 
 		-- theme
 		use "shaunsingh/nord.nvim"

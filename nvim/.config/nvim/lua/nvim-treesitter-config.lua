@@ -1,7 +1,29 @@
 require "nvim-treesitter.configs".setup {
 	ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-	ignore_install = {""}, -- List of parsers to ignore installing
+	ignore_install = {
+		"bash",
+		"beancount",
+		"bibtex",
+		"c_sharp",
+		"clojure",
+		"comment",
+		"commonlisp",
+		"cuda",
+		"d",
+		"dart",
+		"devicetree",
+		"dockerfile",
+		"dot",
+		"elixir",
+		"elm",
+		"erlang",
+		"fennel",
+		"fish",
+		"foam",
+		"fortran",
+		"fusion"
+	}, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = {}, -- list of language that will be disabled
