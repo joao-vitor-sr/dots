@@ -52,8 +52,9 @@ vim.api.nvim_set_keymap("n", "ZA", ":wqa!<CR>", {noremap = true})
 require("luatab").setup {}
 
 vim.api.nvim_command(
-	"au BufReadPost,BufNewFile /home/joao-vitor-sr/codes/php/desenvolvimento/* set tabstop=2 shiftwidth=2 expandtab smarttab"
+	"au BufReadPost,BufNewFile ~/codes/php/desenvolvimento/* set tabstop=2 shiftwidth=2 expandtab smarttab"
 )
+vim.api.nvim_command("au BufReadPost,BufNewFile ~/codes/js/zaap_front/* set tabstop=2 shiftwidth=2 expandtab smarttab")
 vim.api.nvim_command(
 	"autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank {higroup='Visual', timeout=500}"
 )
