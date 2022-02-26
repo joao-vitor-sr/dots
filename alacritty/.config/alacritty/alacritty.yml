@@ -47,27 +47,6 @@ colors:
     cyan: '#6d96a5'
     white: '#aeb3bb'
 
-# font:
-#   normal:
-#     family: RobotoMono
-#     style: Regular
-#
-#   bold:
-#     family: RobotoMono
-#
-#     style: Bold
-#
-#   italic:
-#     family: RobotoMono
-#     style: Italic
-#
-#   bold_italic:
-#     family: RobotoMono
-#     style: Bold Italic
-#
-#   size: 9
-
-
 # Font configuration
 font:
   # Normal (roman) font face
