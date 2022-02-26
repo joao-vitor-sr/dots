@@ -69,3 +69,5 @@ font:
 
 key_bindings:
   - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+  - { key: T,        mods: Control|Shift, action: ScrollPageUp     }
+  - { key: H,        mods: Control|Shift, action: ScrollPageDown   }
