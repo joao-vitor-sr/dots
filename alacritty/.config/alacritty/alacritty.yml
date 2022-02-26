@@ -47,25 +47,120 @@ colors:
     cyan: '#6d96a5'
     white: '#aeb3bb'
 
+# font:
+#   normal:
+#     family: RobotoMono
+#     style: Regular
+#
+#   bold:
+#     family: RobotoMono
+#
+#     style: Bold
+#
+#   italic:
+#     family: RobotoMono
+#     style: Italic
+#
+#   bold_italic:
+#     family: RobotoMono
+#     style: Bold Italic
+#
+#   size: 9
+
+
+# Font configuration
 font:
+  # Normal (roman) font face
   normal:
-    family: RobotoMono
+    # Font family
+    #
+    # Default:
+    #   - (macOS) Menlo
+    #   - (Linux/BSD) monospace
+    #   - (Windows) Consolas
+    # family: Source Code Pro
+    # family: CodeNewRoman Nerd Font
+    # family: RobotoMono Nerd Font
+    # family: Hack
+    # family: JetBrains Mono
+    # family: UbuntuMono Nerd Font
+    # family: Monofur Nerd Font
+    # family: TerminessTTF Nerd Font
+    # family: Mononoki Nerd Font
+    # family: Mononoki Nerd Font
+    family: MesloLGMDZ Nerd Font
+
+    # The `style` can be specified to pick a specific face.
     style: Regular
 
+  # Bold font face
   bold:
-    family: RobotoMono
+    # Font family
+    #
+    # If the bold family is not specified, it will fall back to the
+    # value specified for the normal font.
+    # family: Source Code Pro
+    # family: CodeNewRoman Nerd Font
+    # family: RobotoMono Nerd Font
+    # family: Hack
+    # family: JetBrains Mono
+    # family: UbuntuMono Nerd Font
+    # family: Monofur Nerd Font
+    # family: TerminessTTF Nerd Font
+    # family: Mononoki Nerd Font
+    family: MesloLGMDZ Nerd Font
 
+    # The `style` can be specified to pick a specific face.
     style: Bold
 
+  # Italic font face
   italic:
-    family: RobotoMono
+    # Font family
+    #
+    # If the italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    # family: Source Code Pro
+    # family: CodeNewRoman Nerd Font
+    # family: RobotoMono Nerd Font
+    # family: Hack
+    # family: JetBrains Mono
+    # family: UbuntuMono Nerd Font
+    # family: Monofuritalic Nerd Font Mono
+    # family: TerminessTTF Nerd Font
+    # family: Mononoki Nerd Font
+    family: MesloLGMDZ Nerd Font
+
+    # The `style` can be specified to pick a specific face.
     style: Italic
 
+  # Bold italic font face
   bold_italic:
-    family: RobotoMono
+    # Font family
+    #
+    # If the bold italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    # family: Source Code Pro
+    # family: CodeNewRoman Nerd Font
+    # family: RobotoMono Nerd Font
+    # family: Hack
+    # family: JetBrains Mono
+    # family: UbuntuMono Nerd Font
+    # family: Monofuritalic Nerd Font Mono
+    # family: TerminessTTF Nerd Font
+    # family: Mononoki Nerd Font
+    family: MesloLGMDZ Nerd Font
+
+    # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
-  size: 9
+  # Point size
+  size: 8.0
+
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 1
 
 key_bindings:
   - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
