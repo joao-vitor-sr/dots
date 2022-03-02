@@ -1,0 +1,90 @@
+# ======== MUSIC =========
+
+# Toggle music
+super + o
+	mpc toggle	
+# Decrease volume
+super + bracket{left,right}
+	mpc seek {-10,+10}
+# Change Music time
+super + alt + bracket{left,right}
+	mpc seek {-60,+60}
+
+# Increase and Decrease volume 
+super + {minus,equal}
+	pamixer --allow-boost {-d,-i} 5
+
+# Increase and Decrease volume 
+super + alt + {minus,equal}
+	pamixer --allow-boost {-d,-i} 15 
+# Mute Audio
+super + slash
+	pamixer -t
+
+# ========= DUNST =========
+# Close dunst notification
+super + BackSpace
+	dunstctl close-all
+
+# ========= TERMINAL FUNCTIONS =====
+# Open email
+super + e
+	$TERMINAL -e neomutt
+# Open nmtui
+super + alt + w
+	$TERMINAL -e sudo nmtui
+# Open ncmpcpp
+super + m
+	$TERMINAL -e ncmpcpp
+# Terminal
+super + Return
+	$TERMINAL -e fish
+# Open document wiki
+super + n
+	$TERMINAL -e nvim $HOME/Documents/vimwiki/index.wiki
+
+# ========= BROWSER ============
+super + w
+	$BROWSER
+
+# =========== DMENU ============
+# Open Dmenu
+super + d
+	dmenu_run
+# Open Dmenu with emojis
+super + alt + i
+	dmenuunicode
+# Open Calculator
+super + i
+	=
+# Open system manager
+super + Escape
+	sysact	
+# Open dmenu with passwords
+super + alt + d
+	passmenu	
+
+# ======= FUNCTIONS SHORTCUTS ==========
+# Select display
+super + F3
+	displayselect
+# Torrent
+super + F6
+	torwrap
+# turn off transmission daemon
+super + F7
+	td-toggle
+# update email
+super + F8
+	mw -Y
+# dmenu mount
+super + F9
+	dmenumount
+
+# ============= PRINT =========
+alt + Print
+	maimpick
+
+# ============= MOUSE =========
+button2
+	xte 'keydown Control_L' 'keydown c' 'keyup Control_L' 'keyup c'
