@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case "$1" in
+"C-comma")      while read file; do setbg "$file" & done ;;
+"C-w")  rotate 270 ;;
+"C-v") rotate  90 ;;
+"C-z")  rotate 180 ;;
+esac
