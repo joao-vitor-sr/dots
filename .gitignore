@@ -1,5 +1,6 @@
 nvim/.config/nvim/sessions/*
 nvim/.config/nvim/plugged/*
+nvim/.config/nvim/plugin/*
 
 mpd/.config/mpd/*
 !mpd/.config/mpd/mpd.conf

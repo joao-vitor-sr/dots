@@ -34,7 +34,7 @@ return require("packer").startup(
 		use "hrsh7th/cmp-path"
 		use "hrsh7th/cmp-cmdline"
 		use "onsails/lspkind-nvim" -- cmp menu
-		use {"tami5/lspsaga.nvim"} -- nightly
+		use "tami5/lspsaga.nvim" -- nightly
 
 		-- files
 		use "kyazdani42/nvim-tree.lua"
