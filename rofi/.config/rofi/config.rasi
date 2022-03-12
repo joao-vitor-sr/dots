@@ -1,0 +1,5 @@
+configuration {
+	font: "MesloLGMDZ Nerd Font 10";
+}
+@import "~/.local/share/rofi/themes/nord.rasi"
+@theme "nord"

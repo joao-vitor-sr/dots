@@ -50,16 +50,17 @@ super + w
 # =========== DMENU ============
 # Open Dmenu
 super + d
-	dmenu_run
+	rofi -show run
 # Open Dmenu with emojis
 super + alt + i
 	dmenuunicode
 # Open Calculator
 super + i
-	=
+	rofi -show calc -modi calc -no-show-match -no-sort
 # Open system manager
 super + Escape
-	sysact	
+	rofi -show p -modi p:$HOME/.config/rofi/scripts/rofi-power-menu
+
 # Open dmenu with passwords
 super + alt + d
 	passmenu	
