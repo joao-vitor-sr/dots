@@ -86,8 +86,8 @@ require("formatter").setup(
 				-- gnu-format (indent)
 				function()
 					return {
-						exe = "indent",
-						args = {"-ts", 4},
+						exe = "clang-format",
+						args = {},
 						stdin = true
 					}
 				end
@@ -138,7 +138,7 @@ vim.api.nvim_exec(
 	[[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.ts,*.tsx,*.md,*.rs,*.go,~/codes/js/**/*.js silent FormatWrite
+  autocmd BufWritePost *.ts,*.c,*.tsx,*.md,*.rs,*.go,~/codes/js/**/*.js silent FormatWrite
 augroup END
 ]],
 	true
