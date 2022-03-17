@@ -63,12 +63,12 @@ super + Escape
 
 # Open dmenu with passwords
 super + alt + d
-	passmenu	
+	passmenu
 
 # ======= FUNCTIONS SHORTCUTS ==========
 # Select display
 super + F3
-	displayselect
+	displayselect_rofi
 # Torrent
 super + F6
 	torwrap
