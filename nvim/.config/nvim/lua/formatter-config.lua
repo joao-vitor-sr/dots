@@ -51,6 +51,16 @@ require("formatter").setup(
 					}
 				end
 			},
+			json = {
+				--prettier
+				function()
+					return {
+						exe = "prettier",
+						args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+						stdin = true
+					}
+				end
+			},
 			typescriptreact = {
 				--prettier
 				function()
@@ -138,7 +148,7 @@ vim.api.nvim_exec(
 	[[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.ts,*.c,*.tsx,*.md,*.rs,*.go,~/codes/js/**/*.js silent FormatWrite
+  autocmd BufWritePost *.json,*.ts,*.c,*.tsx,*.md,*.rs,*.go,~/codes/js/**/*.js silent FormatWrite
 augroup END
 ]],
 	true
