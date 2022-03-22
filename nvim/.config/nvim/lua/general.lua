@@ -13,7 +13,11 @@ vim.api.nvim_command("set termguicolors")
 vim.api.nvim_command("set encoding=UTF-8")
 
 vim.api.nvim_command("set nu rnu")
-vim.api.nvim_command("colorscheme nord")
+
+vim.api.nvim_command([[let g:tokyonight_style = 'night' " available: night, storm]])
+vim.api.nvim_command([[let g:tokyonight_enable_italic = 1"]])
+
+vim.api.nvim_command("colorscheme tokyonight")
 
 vim.api.nvim_command("let g:qs_highlight_on_keys = []")
 

@@ -17,13 +17,25 @@
 ;==========================================================
 
 [colors]
-background = #2E3440
-background-alt = #fff
-foreground = #D8DEE9
-foreground-alt = #eee8d5
-primary = #ff52a
+;background = ${xrdb:color0:#222}
+background = #11121d
+background-alt = #15161e
+;foreground = ${xrdb:color7:#222}
+foreground = #a9b1d6
+foreground-alt = #7c88c0
+; primary = #f7768e
+primary = #8867c0
 secondary = #e60053
 alert = #bd2c40
+
+blue = #7199EE
+cyan = #38A89D
+green =  #A0E8A2
+orange = #d19a66
+red =  #e06c75
+yellow = #D4B261
+purple = #A485DD
+light-gray = #565c64
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -38,7 +50,7 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-border-size = 1
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -57,7 +69,6 @@ modules-right = pulseaudio wlan eth battery date
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
 
 override-redirect = false
 
@@ -115,8 +126,9 @@ label-layout = %symbol%
 label-layout-padding = 2
 label-floating = F
 label-focused = %name%
-label-focused-foreground = ${colors.primary}
 label-focused-padding = 2
+label-focused-underline= #a9b1d6
+
 label-unfocused = %name%
 label-unfocused-padding = 2
 label-unfocused-foreground = #A3BE8C

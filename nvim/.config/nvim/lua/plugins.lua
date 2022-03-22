@@ -43,6 +43,7 @@ return require("packer").startup(
 
 		-- theme
 		use "shaunsingh/nord.nvim"
+		use "ghifarit53/tokyonight-vim"
 		use "nvim-lualine/lualine.nvim"
 		use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 	end
