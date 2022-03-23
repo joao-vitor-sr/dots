@@ -2,4 +2,5 @@ configuration {
 	font: "MesloLGMDZ Nerd Font 10";
 }
 @import "~/.local/share/rofi/themes/nord.rasi"
-@theme "nord"
+@import "~/.local/share/rofi/themes/tokyo.rasi"
+@theme "tokyo"

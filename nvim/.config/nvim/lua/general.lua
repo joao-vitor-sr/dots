@@ -59,9 +59,7 @@ vim.api.nvim_command(
 	"au BufReadPost,BufNewFile ~/codes/php/desenvolvimento/* set tabstop=2 shiftwidth=2 expandtab smarttab"
 )
 vim.api.nvim_command("au BufReadPost,BufNewFile ~/codes/js/zaap_front/* set tabstop=2 shiftwidth=2 expandtab smarttab")
-vim.api.nvim_command(
-	"au BufReadPost,BufNewFile *.c set tabstop=2 shiftwidth=2 expandtab smarttab"
-)
+vim.api.nvim_command("au BufReadPost,BufNewFile *.c set tabstop=2 shiftwidth=2 expandtab smarttab")
 
 vim.api.nvim_command(
 	"autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank {higroup='Visual', timeout=500}"
@@ -78,3 +76,18 @@ vim.api.nvim_command("let g:vsnip_filetypes.javascriptreact = ['javascriptreact'
 vim.api.nvim_command("let g:vsnip_filetypes.typescriptreact = ['typescriptreact']")
 vim.api.nvim_command("let g:vsnip_filetypes.c = ['c']")
 vim.api.nvim_command("let g:vsnip_filetypes.php = ['php']")
+
+-- colorizer
+require "colorizer".setup(
+	{"*"},
+	{
+		RGB = true, -- #RGB hex codes
+		RRGGBB = true, -- #RRGGBB hex codes
+		names = true, -- "Name" codes like Blue
+		RRGGBBAA = true, -- #RRGGBBAA hex codes
+		rgb_fn = true, -- CSS rgb() and rgba() functions
+		hsl_fn = true, -- CSS hsl() and hsla() functions
+		css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+		css_fn = true -- Enable all CSS *functions*: rgb_fn, hsl_fn
+	}
+)

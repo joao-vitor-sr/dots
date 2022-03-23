@@ -46,5 +46,7 @@ return require("packer").startup(
 		use "ghifarit53/tokyonight-vim"
 		use "nvim-lualine/lualine.nvim"
 		use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+		use "norcalli/nvim-colorizer.lua"
+		use "p00f/nvim-ts-rainbow"
 	end
 )
