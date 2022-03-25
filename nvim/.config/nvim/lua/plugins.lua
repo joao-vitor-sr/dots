@@ -22,12 +22,14 @@ return require("packer").startup(
 
 		-- lsp
 		use "neovim/nvim-lspconfig"
-		use "hrsh7th/cmp-vsnip"
-		use "hrsh7th/vim-vsnip-integ"
-		use "hrsh7th/vim-vsnip"
 		use "rafamadriz/friendly-snippets"
 		use "ray-x/lsp_signature.nvim"
 		use "hrsh7th/cmp-nvim-lsp"
+
+		-- snip
+		use "L3MON4D3/LuaSnip"
+		use "saadparwaiz1/cmp_luasnip"
+
 		-- use "~/codes/lua/nvim-cmp"
 		use "hrsh7th/nvim-cmp"
 		use "hrsh7th/cmp-buffer"

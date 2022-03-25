@@ -32,7 +32,7 @@ super + e
 	$TERMINAL -e neomutt
 # Open nmtui
 super + alt + w
-	$TERMINAL -e sudo nmtui
+	$TERMINAL -e doas nmtui
 # Open ncmpcpp
 super + m
 	$TERMINAL -e ncmpcpp
@@ -53,7 +53,7 @@ super + d
 	rofi -show run
 # Open Dmenu with emojis
 super + alt + i
-	dmenuunicode
+	rofi -show emoji -mod1 emoji
 # Open Calculator
 super + i
 	rofi -show calc -modi calc -no-show-match -no-sort
@@ -63,7 +63,7 @@ super + Escape
 
 # Open dmenu with passwords
 super + alt + d
-	passmenu
+	rofi-pass
 
 # ======= FUNCTIONS SHORTCUTS ==========
 # Select display

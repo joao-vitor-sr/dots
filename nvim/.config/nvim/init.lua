@@ -22,3 +22,6 @@ require("formatter-config")
 
 -- COMMENTER
 require("commenter")
+
+-- SNIPPETS
+require("luasnip-config")
