@@ -50,20 +50,20 @@ super + w
 # =========== DMENU ============
 # Open Dmenu
 super + d
-	rofi -show run
+	rofi -show run -m -4
 # Open Dmenu with emojis
 super + alt + i
-	rofi -show emoji -mod1 emoji
+	rofi -show emoji -mod1 emoji -m -4
 # Open Calculator
 super + i
 	rofi -show calc -modi calc -no-show-match -no-sort
 # Open system manager
 super + Escape
-	rofi -show p -modi p:$HOME/.config/rofi/scripts/rofi-power-menu
+	rofi -show p -modi p:$HOME/.config/rofi/scripts/rofi-power-menu -m -4
 
 # Open dmenu with passwords
 super + alt + d
-	rofi-pass
+	rofi-pass -m -4
 
 # ======= FUNCTIONS SHORTCUTS ==========
 # Select display
