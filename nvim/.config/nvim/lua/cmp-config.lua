@@ -75,7 +75,8 @@ cmp.setup(
 		},
 		sources = {
 			{name = "nvim_lsp"},
-			{name = "luasnip"} -- For luasnip users.
+			{name = "luasnip"}, -- For luasnip users.
+			{name = "path"} -- For luasnip users.
 			-- {name = "buffer", keyword_length = 5}
 		},
 		sorting = {
