@@ -25,3 +25,6 @@ require("commenter")
 
 -- SNIPPETS
 require("luasnip-config")
+
+-- COLORIZER
+require("colorizer-config")

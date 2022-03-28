@@ -20,6 +20,7 @@ vim.api.nvim_command([[let g:tokyonight_enable_italic = 1"]])
 vim.api.nvim_command("colorscheme tokyonight")
 
 vim.api.nvim_command("let g:qs_highlight_on_keys = []")
+vim.api.nvim_command("set colorcolumn=80")
 
 vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", {noremap = true})
@@ -53,16 +54,13 @@ vim.api.nvim_set_keymap("n", "<leader>k", ":m .-2<CR>==", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "ZA", ":wqa!<CR>", {noremap = true})
 
-require("luatab").setup {}
-
-vim.api.nvim_command(
-	"au BufReadPost,BufNewFile ~/codes/php/desenvolvimento/* set tabstop=2 shiftwidth=2 expandtab smarttab"
-)
-vim.api.nvim_command("au BufReadPost,BufNewFile ~/codes/js/zaap_front/* set tabstop=2 shiftwidth=2 expandtab smarttab")
+vim.api.nvim_command("au BufReadPost,BufNewFile *Makefile set autoindent noexpandtab tabstop=4 shiftwidth=4")
 vim.api.nvim_command("au BufReadPost,BufNewFile *.c set tabstop=2 shiftwidth=2 expandtab smarttab")
+vim.api.nvim_command("au BufReadPost,BufNewFile *.cpp set tabstop=2 shiftwidth=2 expandtab smarttab")
 
+vim.api.nvim_command("set tabstop=2 shiftwidth=2 expandtab smarttab")
 vim.api.nvim_command(
-	"autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank {higroup='Visual', timeout=500}"
+    "autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank {higroup='Visual', timeout=500}"
 )
 
 vim.api.nvim_command("let g:session_dir = '~/.config/nvim/sessions'")
@@ -76,18 +74,3 @@ vim.api.nvim_command("let g:vsnip_filetypes.javascriptreact = ['javascriptreact'
 vim.api.nvim_command("let g:vsnip_filetypes.typescriptreact = ['typescriptreact']")
 vim.api.nvim_command("let g:vsnip_filetypes.c = ['c']")
 vim.api.nvim_command("let g:vsnip_filetypes.php = ['php']")
-
--- colorizer
-require "colorizer".setup(
-	{"*"},
-	{
-		RGB = true, -- #RGB hex codes
-		RRGGBB = true, -- #RRGGBB hex codes
-		names = true, -- "Name" codes like Blue
-		RRGGBBAA = true, -- #RRGGBBAA hex codes
-		rgb_fn = true, -- CSS rgb() and rgba() functions
-		hsl_fn = true, -- CSS hsl() and hsla() functions
-		css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-		css_fn = true -- Enable all CSS *functions*: rgb_fn, hsl_fn
-	}
-)

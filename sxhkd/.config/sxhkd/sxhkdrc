@@ -82,6 +82,10 @@ super + F8
 super + F9
 	dmenumount
 
+super + F11
+	remaps
+super + F12
+	remaps_qwerty
 # ============= PRINT =========
 alt + Print
 	maimpick
