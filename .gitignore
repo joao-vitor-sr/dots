@@ -6,3 +6,5 @@ mpd/.config/mpd/*
 !mpd/.config/mpd/mpd.conf
 ncmpcpp/.config/ncmpcpp/error.log
 rofi/.local/share/rofi/rofi_calc_history
+qutebrowser/.config/qutebrowser/bookmarks/*
+qutebrowser/.config/qutebrowser/quickmarks
