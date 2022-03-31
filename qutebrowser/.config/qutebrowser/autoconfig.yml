@@ -6,6 +6,8 @@
 
 config_version: 2
 settings:
+  auto_save.session:
+    global: true
   bindings.commands:
     global:
       normal:
@@ -18,33 +20,58 @@ settings:
         ',nu': devtools-focus
         /: nop
         ':': nop
+        <Ctrl+b>: nop
+        <Ctrl+d>: nop
+        <Ctrl+e>: scroll-page 0 0.5
+        <Ctrl+f>: nop
+        <Ctrl+g>: scroll-page 0 -0.5
+        <Ctrl+l>: command-history-prev
         <Ctrl+t>: nop
+        <Ctrl+u>: nop
+        <Ctrl+x>: scroll-page 0 -1
         <Ctrl+y>: open -t
         '?': nop
+        B: search-prev
+        D: back
         E: tab-close -o
         G: undo -w
         H: tab-next
         I: undo -w
+        N: forward
         P: reload -f
         R: set-cmd-text -s :open -t
         S: 'set-cmd-text :'
         T: tab-prev
         U: hint all tab
         Z: set-cmd-text ?
+        a': download-clear
+        aa: clear-messages
+        b: search-next
         c: mode-enter insert
+        cd: null
         d: scroll left
+        f: null
+        ff: yank
         g: undo
         h: scroll down
         i: nop
         ii: scroll-to-perc 0
         ir: set-cmd-text:open {url:pretty}
         j: nop
+        je: download-clear
+        jn: clear-messag
         k: mode-enter caret
         n: scroll left
         p: reload
+        q: null
+        qq: config-cycle tabs.show always never;; config-cycle statusbar.show always
+          never
+        qx: config-cycle statusbar.show always never
+        qy: config-cycle tabs.show always never
         r: set-cmd-text -s :open
         t: scroll up
         u: hint
+        wIf: null
         wi: nop
         wlf: nop
         wlh: nop
@@ -52,6 +79,19 @@ settings:
         wlk: nop
         wll: nop
         wlw: nop
+        yy: null
         z: set-cmd-text /
   content.notifications.enabled:
     http://localhost: false
+  downloads.location.directory:
+    global: ~/Downloads/
+  statusbar.show:
+    global: always
+  tabs.show:
+    global: always
+  url.searchengines:
+    global:
+      DEFAULT: https://duckduckgo.com/?q={}
+      aw: https://wiki.archlinux.org/?search={}
+      dic: https://dicio.com.br/{}
+      ub: https://www.urbandictionary.com/define.php?term={}
