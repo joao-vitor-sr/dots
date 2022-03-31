@@ -1,30 +1,33 @@
-vim.g.mapleader = ","
+vim.g.mapleader = ','
 
-require("plugins")
+require('plugins')
 
 -- lua configs
-require("general")
-require("lualine-config")
-require("nvim-tree-config")
+require('general')
+require('lualine-config')
+require('nvim-tree-config')
 
 -- LSP
-require("lspconfig-config")
-require("cmp-config")
+require('lspconfig-config')
+require('cmp-config')
 
 -- LSP LANGUAGUES
-require("lua-lang")
-require("signature")
+require('lua-lang')
+require('signature')
 
 -- TREE SITTER
-require("nvim-treesitter-config")
+require('nvim-treesitter-config')
 -- FORMATTER
-require("formatter-config")
+require('formatter-config')
 
 -- COMMENTER
-require("commenter")
+require('commenter')
 
 -- SNIPPETS
-require("luasnip-config")
+require('luasnip-config')
 
 -- COLORIZER
-require("colorizer-config")
+require('colorizer-config')
+
+-- BARBAR
+require('barbar-config')

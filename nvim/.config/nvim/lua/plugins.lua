@@ -10,11 +10,15 @@ return require('packer').startup(function(use)
 
 	-- general
 	use('kyazdani42/nvim-web-devicons') -- icons
-	use({
+	--[[ use({
 		'alvarosevilla95/luatab.nvim',
 		config = function()
 			require('luatab').setup({})
 		end,
+	}) ]]
+	use({
+		'romgrk/barbar.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons' },
 	})
 	use('unblevable/quick-scope')
 	use('mhartington/formatter.nvim')
@@ -41,12 +45,14 @@ return require('packer').startup(function(use)
 
 	-- files
 	use('kyazdani42/nvim-tree.lua')
-	use('nvim-lua/plenary.nvim')
-	use('nvim-telescope/telescope.nvim')
+	use({
+		'nvim-telescope/telescope.nvim',
+		requires = { 'nvim-lua/plenary.nvim' },
+	})
 
 	-- theme
 	use('shaunsingh/nord.nvim')
-	use('ghifarit53/tokyonight-vim')
+	use('folke/tokyonight.nvim')
 	use('nvim-lualine/lualine.nvim')
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 	use('norcalli/nvim-colorizer.lua')
