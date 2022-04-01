@@ -1,5 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local command = vim.api.nvim_command
+local optsSilent = { silent = true }
 
 map('v', '>', '>gv', { noremap = true })
 map('v', '<', '<gv', { noremap = true })
@@ -7,10 +8,10 @@ map('v', '<', '<gv', { noremap = true })
 map('n', 'j', "v:count  ? 'j' : 'gj'", { noremap = true, expr = true })
 map('n', 'k', "v:count  ? 'k' : 'gk'", { noremap = true, expr = true })
 
-map('n', '<c-t>', ':wincmd k<CR>', { silent = true })
-map('n', '<c-h>', ':wincmd j<CR>', { silent = true })
-map('n', '<c-d>', ':wincmd h<CR>', { silent = true })
-map('n', '<c-n>', ':wincmd l<CR>', { silent = true })
+map('n', '<c-t>', ':wincmd k<CR>', optsSilent)
+map('n', '<c-h>', ':wincmd j<CR>', optsSilent)
+map('n', '<c-d>', ':wincmd h<CR>', optsSilent)
+map('n', '<c-n>', ':wincmd l<CR>', optsSilent)
 
 command('set termguicolors')
 command('set encoding=UTF-8')

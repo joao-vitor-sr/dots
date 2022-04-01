@@ -7,15 +7,6 @@ return require('packer').startup(function(use)
 	use('tpope/vim-surround')
 	use('tpope/vim-obsession')
 	use('tpope/vim-repeat')
-
-	-- general
-	use('kyazdani42/nvim-web-devicons') -- icons
-	--[[ use({
-		'alvarosevilla95/luatab.nvim',
-		config = function()
-			require('luatab').setup({})
-		end,
-	}) ]]
 	use({
 		'romgrk/barbar.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons' },
@@ -29,7 +20,7 @@ return require('packer').startup(function(use)
 	use('neovim/nvim-lspconfig')
 	use('rafamadriz/friendly-snippets')
 	use('ray-x/lsp_signature.nvim')
-	use('hrsh7th/cmp-nvim-lsp')
+  use('hrsh7th/cmp-nvim-lsp')
 
 	-- snip
 	use('L3MON4D3/LuaSnip')
