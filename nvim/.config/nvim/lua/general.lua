@@ -26,16 +26,6 @@ vim.cmd([[colorscheme tokyonight]])
 command('let g:qs_max_chars=150')
 command('set colorcolumn=80')
 
-map(
-	'n',
-	'<leader>ff',
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>",
-	{ noremap = true }
-)
-map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { noremap = true })
-map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { noremap = true })
-map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true })
-
 map('v', '<leader>y', '"+y', { noremap = true })
 map('n', '<leader>p', '"+p', { noremap = true })
 
