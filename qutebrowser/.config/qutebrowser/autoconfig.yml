@@ -38,9 +38,12 @@ settings:
         H: tab-next
         I: undo -w
         N: forward
+        O: null
+        O': bookmark-list
         P: reload -f
         R: set-cmd-text -s :open -t
         S: 'set-cmd-text :'
+        Sq: null
         T: tab-prev
         U: hint all tab
         Z: set-cmd-text ?
@@ -83,6 +86,7 @@ settings:
         z: set-cmd-text /
   content.notifications.enabled:
     http://localhost: false
+    https://lereaprender.com.br: false
   downloads.location.directory:
     global: ~/Downloads/
   statusbar.show:

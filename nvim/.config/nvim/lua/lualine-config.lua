@@ -2,36 +2,9 @@
 -- Author: lokesh-krishna
 -- MIT license, see LICENSE for more details.
 
--- stylua: ignore
-local colors = {
-	blue = "#7AA2F7",
-	cyan = "#4abaaf",
- black = "#080808",
- white = "#acb0d0",
-	 red = "#E0AF68",
-violet = "#F7768E",
-	grey = "#303030",
-}
-
-local bubbles_theme = {
-	normal = {
-		a = { fg = colors.black, bg = colors.violet },
-		b = { fg = colors.white, bg = colors.grey },
-		c = { fg = colors.black, bg = colors.black },
-	},
-	insert = { a = { fg = colors.black, bg = colors.blue } },
-	visual = { a = { fg = colors.black, bg = colors.cyan } },
-	replace = { a = { fg = colors.black, bg = colors.red } },
-	inactive = {
-		a = { fg = colors.white, bg = colors.black },
-		b = { fg = colors.white, bg = colors.black },
-		c = { fg = colors.black, bg = colors.black },
-	},
-}
-
 require('lualine').setup({
 	options = {
-		theme = 'nokyo_night',
+		theme = 'auto',
 		component_separators = '|',
 		section_separators = { left = '', right = '' },
 	},

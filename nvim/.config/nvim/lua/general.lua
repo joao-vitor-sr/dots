@@ -23,7 +23,7 @@ command([[let g:tokyonight_enable_italic = 1"]])
 
 vim.cmd([[colorscheme tokyonight]])
 
-command('let g:qs_highlight_on_keys = []')
+command('let g:qs_max_chars=150')
 command('set colorcolumn=80')
 
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true })
