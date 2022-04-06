@@ -96,9 +96,13 @@ settings:
     global: always
   tabs.show:
     global: always
+  url.default_page:
+    global: https://
   url.searchengines:
     global:
       DEFAULT: https://startpage.com/search?query={}
       aw: https://wiki.archlinux.org/?search={}
       dic: https://dicio.com.br/{}
       ub: https://www.urbandictionary.com/define.php?term={}
+  url.start_pages:
+    global: https://mcotocel.github.io/startpage/
