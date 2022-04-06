@@ -13,6 +13,20 @@ require('formatter').setup({
 				}
 			end,
 		},
+		sh = {
+			function()
+				return {
+					exe = 'shfmt',
+					args = {
+						'-i',
+						2,
+						'-ci',
+						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+					},
+					stdin = true,
+				}
+			end,
+		},
 		markdown = {
 			-- prettier
 			function()
@@ -109,7 +123,6 @@ require('formatter').setup({
 				return {
 					exe = 'stylua',
 					args = {
-						'--config-path ' .. os.getenv('XDG_CONFIG_HOME') .. '/stylua/stylua.toml',
 						'-',
 					},
 					stdin = true,
@@ -171,7 +184,7 @@ vim.api.nvim_exec(
 	[[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.json,*.ts,*.c,*.tsx,*.md,*.rs,*.go,~/codes/js/**/*.js,*.lua silent FormatWrite
+  autocmd BufWritePost *.json,*.ts,*.c,*.tsx,*.md,*.rs,*.go,~/codes/js/**/*.js,*.lua,*.sh silent FormatWrite
 augroup END
 ]],
 	true

@@ -89,6 +89,7 @@ settings:
   content.notifications.enabled:
     http://localhost: false
     https://lereaprender.com.br: false
+    https://pt.aliexpress.com: false
   downloads.location.directory:
     global: ~/Downloads/
   statusbar.show:
@@ -97,7 +98,7 @@ settings:
     global: always
   url.searchengines:
     global:
-      DEFAULT: https://duckduckgo.com/?q={}
+      DEFAULT: https://startpage.com/search?query={}
       aw: https://wiki.archlinux.org/?search={}
       dic: https://dicio.com.br/{}
       ub: https://www.urbandictionary.com/define.php?term={}
