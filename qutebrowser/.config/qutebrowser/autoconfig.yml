@@ -84,6 +84,8 @@ settings:
         wlw: nop
         yy: null
         z: set-cmd-text /
+  content.geolocation:
+    https://www.bestbuy.com: false
   content.javascript.can_access_clipboard:
     global: true
   content.notifications.enabled:

@@ -1,4 +1,3 @@
-
 # ~/.config/starship.toml
 
 # A minimal left prompt
@@ -6,3 +5,10 @@ format = """$character"""
 
 # move the rest of the prompt to the right
 right_format = """$all"""
+
+[character]
+vicmd_symbol = "[](bold green)"
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+
+
