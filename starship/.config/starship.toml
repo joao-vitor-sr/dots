@@ -7,8 +7,8 @@ format = """$character"""
 right_format = """$all"""
 
 [character]
-vicmd_symbol = "[](bold green)"
-success_symbol = "[](bold green)"
-error_symbol = "[](bold red)"
+vicmd_symbol = "[ ](bold blue)"
+success_symbol = "[ ](bold green)"
+error_symbol = "[ ](bold red)"
 
 
