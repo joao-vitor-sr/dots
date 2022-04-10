@@ -208,4 +208,6 @@ set fish_user_paths (yarn global bin)
 
 pokemon-colorscripts -r
 
+zoxide init fish | source
+
 starship init fish | source
