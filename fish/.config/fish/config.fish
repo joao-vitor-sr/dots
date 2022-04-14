@@ -1,3 +1,5 @@
+source ~/.config/fish/profile.fish
+source ~/.config/fish/tmux.fish
 
 # RANGER CONFIGURATION
 function ranger-cd                                                               
@@ -156,8 +158,6 @@ alias xr="sudo xbps-remove -R"
 alias xq="xbps-query" 
 alias zat="zathura"
 
-alias magit="nvim -c MagitOnly" 
-
 
 alias cac="cd /home/joao-vitor-sr/.cache ; ls -a" 
 alias cf="cd /home/joao-vitor-sr/.config ; la" 
@@ -196,15 +196,6 @@ set fish_color_autosuggestion '#7d7d7d'
 set fish_color_command brcyan
 set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
-
-# sources 
-source /opt/asdf-vm/asdf.fish
-
-# PATHS
-fish_add_path /home/joao-vitor-sr/.asdf 
-
-set fish_user_paths (yarn global bin)
-
 
 pokemon-colorscripts -r
 
