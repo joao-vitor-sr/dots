@@ -4,7 +4,7 @@
 
 require('lualine').setup({
 	options = {
-		theme = 'auto',
+		theme = 'gruvbox',
 		component_separators = '|',
 		section_separators = { left = '', right = '' },
 	},

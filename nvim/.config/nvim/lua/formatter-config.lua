@@ -184,7 +184,7 @@ vim.api.nvim_exec(
 	[[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.json,*.c,*.md,*.rs,*.go,~/codes/js/**/*.js,*.lua,*.sh silent FormatWrite
+  autocmd BufWritePost *.json,*.c,*.md,*.rs,*.go,~/codes/js/**/*.js,*.sh silent FormatWrite
 augroup END
 ]],
 	true

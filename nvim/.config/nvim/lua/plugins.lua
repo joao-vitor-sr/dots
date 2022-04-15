@@ -55,6 +55,7 @@ return require("packer").startup(function(use)
 	-- theme
 	use("shaunsingh/nord.nvim")
 	use("folke/tokyonight.nvim")
+	use("morhetz/gruvbox")
 	use("nvim-lualine/lualine.nvim")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("norcalli/nvim-colorizer.lua")

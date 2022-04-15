@@ -1,2 +1,2 @@
 config.load_autoconfig()
-config.source('themes/tokynight.py')
+config.source('themes/gruvbox.py')

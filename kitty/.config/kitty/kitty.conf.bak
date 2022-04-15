@@ -1863,6 +1863,6 @@ map kitty_mod+t no-op
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark
+# Nord
 include current-theme.conf
 # END_KITTY_THEME

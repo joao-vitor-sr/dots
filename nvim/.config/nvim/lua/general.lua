@@ -21,7 +21,7 @@ command('set nu rnu')
 command([[let g:tokyonight_style = 'night' " available: night, storm]])
 command([[let g:tokyonight_enable_italic = 1"]])
 
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme gruvbox]])
 
 command('let g:qs_max_chars=150')
 command('set colorcolumn=80')
