@@ -1,12 +1,12 @@
-vim.g.mapleader = ","
+vim.g.mapleader = ','
 
-require("plugins")
+require('plugins')
 
 -- GENERAL/INTERFACE
-require("interface-config")
+require('interface-config')
 
 -- LSP
-require("lsp-config")
+require('lsp-config')
 
 -- FORMATTER
-require("formatter-config")
+require('formatter-config')
