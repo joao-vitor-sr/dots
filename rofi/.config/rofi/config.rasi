@@ -4,4 +4,4 @@ configuration {
 @import "~/.local/share/rofi/themes/nord.rasi"
 @import "~/.local/share/rofi/themes/tokyo.rasi"
 @import "~/.local/share/rofi/themes/gruvbox-dark.rasi"
-@theme "gruvbo-dark"
+@theme "gruvbox-dark"
