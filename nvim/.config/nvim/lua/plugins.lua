@@ -1,18 +1,20 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
-	use("wbthomason/packer.nvim")
+  use('wbthomason/packer.nvim')
 	-- Tim pope plugins
 	use("tpope/vim-sensible")
 	use("tpope/vim-surround")
 	use("tpope/vim-obsession")
 	use("tpope/vim-repeat")
-	use({
+  use({
 		"romgrk/barbar.nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
 	use("unblevable/quick-scope")
-	use("mhartington/formatter.nvim")
+	-- use("mhartington/formatter.nvim")
+  use("lukas-reineke/lsp-format.nvim")
+  use("jose-elias-alvarez/null-ls.nvim")
 	use("numToStr/Comment.nvim")
 	use("joao-vitor-sr/nvimDvorak")
 

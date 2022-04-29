@@ -1,24 +1,24 @@
 # ======== MUSIC =========
 
 # Toggle music
-super + o
+super + r
 	mpc toggle	
-# Decrease volume
-super + bracket{left,right}
-	mpc seek {-10,+10}
+
 # Change Music time
-super + alt + bracket{left,right}
-	mpc seek {-60,+60}
+
+super + {slash,equal}
+	mpc seek {-10,+10}
 
 # Increase and Decrease volume 
-super + {minus,equal}
+super + bracket{left,right}
 	pamixer --allow-boost {-d,-i} 5
 
-# Increase and Decrease volume 
-super + alt + {minus,equal}
-	pamixer --allow-boost {-d,-i} 15 
+# open pulsemixer
+super + alt + bracketright
+	$TERMINAL -e pulsemixer
+
 # Mute Audio
-super + slash
+super + alt + bracketleft
 	pamixer -t
 
 # ========= DUNST =========
@@ -28,10 +28,11 @@ super + BackSpace
 
 # ========= TERMINAL FUNCTIONS =====
 # Open email
-super + e
+super + period
 	$TERMINAL -e neomutt
+
 # Open nmtui
-super + alt + w
+super + alt + comma
 	$TERMINAL -e doas nmtui
 # Open ncmpcpp
 super + m
@@ -40,29 +41,29 @@ super + m
 super + Return
 	$TERMINAL -e fish
 # Open document wiki
-super + n
+super + b
 	$TERMINAL -e nvim $HOME/Documents/vimwiki/index.wiki
 
 # ========= BROWSER ============
-super + w
+super + comma
 	$BROWSER
 
 # =========== DMENU ============
 # Open Dmenu
-super + d
+super + e
 	rofi -show run -m -4
 # Open Dmenu with emojis
-super + alt + i
+super + alt + c
 	rofi -show emoji -mod1 emoji -m -4
 # Open Calculator
-super + i
-	rofi -show calc -modi calc -no-show-match -no-sort
+super + l
+	rofi -show calc -modi calc -no-show-match -no-sort -m -4
 # Open system manager
 super + Escape
 	rofi -show p -modi p:$HOME/.config/rofi/scripts/rofi-power-menu -m -4
 
 # Open dmenu with passwords
-super + alt + d
+super + alt + e
 	rofi-pass -m -4
 
 # ======= FUNCTIONS SHORTCUTS ==========
@@ -93,3 +94,67 @@ alt + Print
 # ============= MOUSE =========
 button2
 	xte 'keydown Control_L' 'keydown c' 'keyup Control_L' 'keyup c'
+
+# =========== BSPWM ==============
+# close and kill
+super + {_,alt + }apostrophe
+	bspc node -{c,k}
+
+super + y
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+super + u
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest window
+super + c
+	bspc node -s biggest.window
+
+#
+# state/flags
+#
+
+# set the window state
+super + p
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,alt + }{d,h,t,n}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous desktop in the current monitor
+super + {_,alt + }{i,s}
+	bspc {desktop -f,node -d} {prev,next}.local --follow
+
+# focus or send to the given desktop
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+super + alt + {1-9,0}
+  bspc node -d '^{1-9,10}' --follow
+
+# Send to monitor
+super + z
+  bspc node -m last --follow
+
+super + v
+  bspc monitor {west,east} -f 
+
+# preselect the direction
+super + ctrl + {d,h,t,n}
+	bspc node -p {west,south,north,east}
+
+# cancel the preselection for the focused desktop
+super + alt + Escape
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+
+# ============== MISK ==============
+# Change wallpaper
+super + F2
+  setbg $HOME/Pictures/wallpapers/

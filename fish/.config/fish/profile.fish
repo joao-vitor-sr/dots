@@ -8,10 +8,18 @@ set fish_user_paths (yarn global bin)
 
 fish_add_path -g ~/.local/bin
 
+
+# LANGUAGE
+set -x LANGUAGE en_US.UTF-8
+set -x LC_ALL en_US.UTF-8
+set -x LANG en_US.UTF-8
+set -x LC_TYPE en_US.UTF-8
+
 # ENVIRONMENTS VARIABLES
 set -x EDITOR "nvim"
 set -x TERMINAL "kitty"
 set -x BROWSER "qutebrowser"
+set -x WALLPAPERS ~/Pictures/wallpapers
 
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
@@ -27,7 +35,7 @@ set -x INPUTRC ~/.local/share/.config/shell/inputrc
 set -x ZDOTDIR ~/.local/share/.config/zsh
 set -x WINEPREFIX ~/.local/share/.local/share/wineprefixes/default
 set -x KODI_DATA "~/.local/share/kodi"
-set -x PASSWORD_STORE_DIR ~/.local/share/.local/share/password-store
+set -x PASSWORD_STORE_DIR .local/share/password-store
 set -x ANDROID_SDK_HOME ~/.local/share/.config/android
 set -x CARGO_HOME ~/.local/share/.local/share/cargo
 set -x GOPATH ~/.local/share/go

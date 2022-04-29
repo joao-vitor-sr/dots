@@ -87,7 +87,7 @@ alias gup='git pull --rebase'
 #compdef _git gup=git-fetch
 alias gp='git push'
 #compdef _git gp=git-push
-alias gd='git diff --name-only --diff-filter=d | xargs bat --diff'
+alias gd='git diff'
 #compdef _git gdv=git-diff
 alias gc='git commit -v'
 #compdef _git gc=git-commit
