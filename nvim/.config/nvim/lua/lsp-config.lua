@@ -3,7 +3,6 @@ require('lspconfig-config')
 require('cmp-config')
 
 -- LSP LANGUAGUES
-require('lua-lang')
 require('signature')
 
 -- TROUBLE

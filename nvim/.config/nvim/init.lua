@@ -7,6 +7,3 @@ require('interface-config')
 
 -- LSP
 require('lsp-config')
-
--- FORMATTER
-require('formatter-config')

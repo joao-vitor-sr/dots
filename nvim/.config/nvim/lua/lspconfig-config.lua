@@ -77,8 +77,8 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local servers = { 'tsserver', 'eslint', 'clangd', 'intelephense', 'hls', 'pyright', 'rust_analyzer', 'bashls'}
-for _, lsp in ipairs(servers) do
+local servers = { 'tsserver', 'eslint', 'clangd', 'intelephense', 'hls', 'pyright', 'rust_analyzer', 'bashls', 'sumneko_lua' }
+  for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
@@ -96,4 +96,4 @@ vim.api.nvim_set_keymap('n', '[d', '<cmd>Lspsaga diagnostic_jump_next<CR>', { no
 vim.api.nvim_set_keymap('n', ']d', '<cmd>Lspsaga` diagnostic_jump_prev<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true })
 
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
