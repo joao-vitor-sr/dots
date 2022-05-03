@@ -155,3 +155,8 @@ super + alt + Escape
 # Change wallpaper
 super + F2
   setbg $HOME/Pictures/wallpapers/
+
+# ============== FLOATING WINDOWS ===========
+# Move floating window
+super + {Left,Down,Up,Right}
+    xdotool getwindowfocus windowmove --relative %1 {-20 0, 0 +20, 0 -20, +20 0}
