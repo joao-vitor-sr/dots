@@ -12,6 +12,5 @@ bspc config gapless_monocle      true
 
 bspc rule -a Zathura state=tiled
 
-~/.config/polybar/bar.sh
-
+~/.config/polybar/bar.sh 
 
