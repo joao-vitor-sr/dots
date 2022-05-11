@@ -2,7 +2,7 @@ local maps = vim.api.nvim_set_keymap
 local opts = { silent = true, noremap = true }
 
 -- Lua
-maps('n', '<leader>xx', '<cmd>Trouble<cr>', opts)
+maps('n', '<leader>xx', '<cmd>TroubleToggle<cr>', opts)
 maps('n', '<leader>xw', '<cmd>Trouble workspace_diagnostics<cr>', opts)
 maps('n', '<leader>xd', '<cmd>Trouble document_diagnostics<cr>', opts)
 maps('n', '<leader>xl', '<cmd>Trouble loclist<cr>', opts)

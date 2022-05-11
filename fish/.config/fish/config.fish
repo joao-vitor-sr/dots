@@ -159,6 +159,7 @@ alias xq="xbps-query"
 alias zat="zathura"
 
 
+
 alias cac="cd /home/joao-vitor-sr/.cache ; ls -a" 
 alias cf="cd /home/joao-vitor-sr/.config ; la" 
 alias D="cd /home/joao-vitor-sr/Downloads ; ls -a" 
@@ -187,6 +188,9 @@ alias cfmc="$EDITOR /home/joao-vitor-sr/.config/ncmpcpp/config"
 alias cfl="$EDITOR /home/joao-vitor-sr/.config/lf/lfrc" 
 alias cfL="$EDITOR /home/joao-vitor-sr/.config/lf/scope" 
 alias cfX="$EDITOR /home/joao-vitor-sr/.config/sxiv/exec/key-handler"
+
+# rust tools
+alias zz="z -"
 
 set fish_greeting
 

@@ -35,8 +35,9 @@ settings:
         D: back
         E: tab-close -o
         G: undo -w
-        H: tab-next
+        H: tab-prev
         I: undo -w
+        K: mode-enter caret ;; selection-toggle --line
         N: forward
         O: null
         O': bookmark-list
@@ -44,7 +45,7 @@ settings:
         R: set-cmd-text -s :open -t
         S: 'set-cmd-text :'
         Sq: null
-        T: tab-prev
+        T: tab-next
         U: hint all tab
         Z: set-cmd-text ?
         a': download-clear
@@ -60,7 +61,7 @@ settings:
         i: nop
         ii: scroll-to-perc 0
         ir: set-cmd-text:open {url:pretty}
-        j: nop
+        j: mode-enter normal
         je: download-clear
         jn: clear-messag
         k: mode-enter caret

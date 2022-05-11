@@ -97,4 +97,18 @@ vim.api.nvim_set_keymap('n', '[d', '<cmd>Lspsaga diagnostic_jump_next<CR>', { no
 vim.api.nvim_set_keymap('n', ']d', '<cmd>Lspsaga` diagnostic_jump_prev<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true })
 
-vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
+local configs = require 'lspconfig.configs'
+
+ -- Check if the config is already defined (useful when reloading this file)
+ if not configs.stupid_lsp then
+   configs.stupid_lsp = {
+     default_config = {
+       cmd = { vim.env.HOME .. "/codes/js/lsp/bin/stupid-lsp", "--stdio"},
+       filetypes = {'txt', 'text'},
+       root_dir = require('lspconfig').util.find_git_ancestor,
+       settings = {},
+     },
+   }
+ end
+
+require('lspconfig').stupid_lsp.setup {}
