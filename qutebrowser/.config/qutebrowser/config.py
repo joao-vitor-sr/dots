@@ -1,2 +1,2 @@
 config.load_autoconfig()
-config.source('themes/gruvbox.py')
+config.source('themes/solarized.py')

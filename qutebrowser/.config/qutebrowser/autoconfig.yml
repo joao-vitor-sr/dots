@@ -111,4 +111,4 @@ settings:
       dic: https://dicio.com.br/{}
       ub: https://www.urbandictionary.com/define.php?term={}
   url.start_pages:
-    global: https://mcotocel.github.io/startpage/
+    global: https://startpage.com
