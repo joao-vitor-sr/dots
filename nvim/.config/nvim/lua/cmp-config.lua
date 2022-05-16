@@ -67,8 +67,8 @@ cmp.setup({
 		end,
 	},
 	sources = {
+    { name = 'luasnip' }, -- For luasnip users.
 		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' }, -- For luasnip users.
 		{ name = 'path' }, -- For luasnip users.
 		-- {name = "buffer", keyword_length = 5}
 	},
