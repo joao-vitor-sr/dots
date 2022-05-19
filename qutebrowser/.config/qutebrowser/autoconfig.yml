@@ -91,6 +91,9 @@ settings:
     global: true
   content.media.audio_capture:
     https://meet.google.com: true
+    https://mictests.com: true
+  content.media.video_capture:
+    https://docs.google.com: false
   content.notifications.enabled:
     http://desenv.e4sistemas.com.br: false
     http://localhost: false

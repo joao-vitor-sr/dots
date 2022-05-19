@@ -78,6 +78,27 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+require "lsp-format".setup {
+    typescript = { tab_width = 2 },
+    typescriptreact = { tab_width = 2 },
+    yaml = { tab_width = 2 },
+}
+local prettier = {
+    formatCommand = [[prettier --stdin-filepath ${INPUT} ${--tab-width:tab_width}]],
+    formatStdin = true,
+}
+require "lspconfig".efm.setup {
+    on_attach = require "lsp-format".on_attach,
+    init_options = { documentFormatting = true },
+    settings = {
+        languages = {
+            typescript = { prettier },
+            typescriptreact = { prettier },
+            yaml = { prettier },
+        },
+    },
+}
+
 local servers = { 'tsserver', 'eslint', 'clangd', 'intelephense', 'hls', 'pyright', 'rust_analyzer', 'bashls', 'sumneko_lua', 'jsonls' }
   for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup({
@@ -103,7 +124,7 @@ local configs = require 'lspconfig.configs'
  if not configs.stupid_lsp then
    configs.stupid_lsp = {
      default_config = {
-       cmd = { vim.env.HOME .. "/codes/js/lsp/bin/stupid-lsp", "--stdio"},
+       cmd = { vim.env.HOME .. "/codes/js/lsp-stupid/bin/stupid-lsp", "--stdio"},
        filetypes = {'txt', 'text'},
        root_dir = require('lspconfig').util.find_git_ancestor,
        settings = {},
