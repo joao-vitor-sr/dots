@@ -1,5 +1,6 @@
 require "lsp-format".setup {
-    typescript = { tab_width = 4 },
+    typescript = { tab_width = 2 },
+    typescriptreact = { tab_width = 2 },
     yaml = { tab_width = 2 },
     lua = {},
 }
@@ -10,7 +11,7 @@ local prettier = {
 }
 
 local lua_format = {
-    formatCommand = [[lua-format -i]],
+    formatCommand = [[lua-format --double-quote-to-single-quote -i]],
     formatStdin = true,
 }
 require "lspconfig".efm.setup {
@@ -19,6 +20,7 @@ require "lspconfig".efm.setup {
     settings = {
         languages = {
             typescript = { prettier },
+            typescriptreact = { prettier },
             yaml = { prettier },
             lua = { lua_format },
         },
