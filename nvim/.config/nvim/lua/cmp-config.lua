@@ -30,7 +30,6 @@ cmp.setup({
 				look = '[Look]',
 				path = '[Path]',
 				spell = '[Spell]',
-				calc = '[Calc]',
 			},
 		}),
 	},
