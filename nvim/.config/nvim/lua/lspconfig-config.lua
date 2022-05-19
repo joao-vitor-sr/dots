@@ -64,13 +64,13 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 	buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 	buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-	buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-	buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-	buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-	buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-	buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-	buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-	buf_set_keymap('n', '<space>k', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+	buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+	buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+	buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+	buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+	buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+	buf_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', '<leader>lk', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
 
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
@@ -78,26 +78,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require "lsp-format".setup {
-    typescript = { tab_width = 2 },
-    typescriptreact = { tab_width = 2 },
-    yaml = { tab_width = 2 },
-}
-local prettier = {
-    formatCommand = [[prettier --stdin-filepath ${INPUT} ${--tab-width:tab_width}]],
-    formatStdin = true,
-}
-require "lspconfig".efm.setup {
-    on_attach = require "lsp-format".on_attach,
-    init_options = { documentFormatting = true },
-    settings = {
-        languages = {
-            typescript = { prettier },
-            typescriptreact = { prettier },
-            yaml = { prettier },
-        },
-    },
-}
+require("formatting")
 
 local servers = { 'tsserver', 'eslint', 'clangd', 'intelephense', 'hls', 'pyright', 'rust_analyzer', 'bashls', 'sumneko_lua', 'jsonls' }
   for _, lsp in ipairs(servers) do
@@ -110,10 +91,10 @@ local servers = { 'tsserver', 'eslint', 'clangd', 'intelephense', 'hls', 'pyrigh
 	})
 end
 
-vim.api.nvim_set_keymap('n', '<space>e', '<cmd>Lspsaga show_line_diagnostics<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<space>rn', '<cmd>Lspsaga rename<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<space>ca', '<cmd>Lspsaga code_action<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<space>gr', '<cmd>Lspsaga lsp_finder<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Lspsaga show_line_diagnostics<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>Lspsaga rename<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>Lspsaga code_action<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gr', '<cmd>Lspsaga lsp_finder<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '[d', '<cmd>Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', ']d', '<cmd>Lspsaga` diagnostic_jump_prev<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true })
