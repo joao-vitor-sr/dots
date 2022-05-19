@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
 		requires = { 'kyazdani42/nvim-web-devicons' },
 	})
 	use('unblevable/quick-scope')
-	-- use("mhartington/formatter.nvim")
+	use('justinmk/vim-sneak')
 	use('lukas-reineke/lsp-format.nvim')
 	use('numToStr/Comment.nvim')
 	use('joao-vitor-sr/nvimDvorak')

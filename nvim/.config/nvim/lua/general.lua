@@ -39,7 +39,7 @@ map('n', 'N', 'Nzzzv', { noremap = true })
 
 map('n', 'Y', 'y$', { noremap = true })
 
-map('n', 'S', ':%s//g<Left><Left>', { noremap = true })
+map('n', '<leader>fs', ':%s//g<Left><Left>', { noremap = true })
 map('n', '<leader>s', ':s//g<Left><Left>', {})
 
 map('n', '<ESC>', ':noh<CR>', { noremap = true })
@@ -69,3 +69,6 @@ command("let g:vsnip_filetypes.javascriptreact = ['javascriptreact']")
 command("let g:vsnip_filetypes.typescriptreact = ['typescriptreact']")
 command("let g:vsnip_filetypes.c = ['c']")
 command("let g:vsnip_filetypes.php = ['php']")
+
+command("let g:sneak#label = 1")
+
