@@ -10,6 +10,9 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc config focused_border_color \#708183
+bspc config active_border_color \#001e26
+
 bspc rule -a Zathura state=tiled
 
 ~/.config/polybar/bar.sh 
