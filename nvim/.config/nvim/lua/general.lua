@@ -1,74 +1,79 @@
 local map = vim.api.nvim_set_keymap
 local command = vim.api.nvim_command
-local optsSilent = { silent = true }
+local optsSilent = {silent = true}
 
-map('v', '>', '>gv', { noremap = true })
-map('v', '<', '<gv', { noremap = true })
+-- add the >> feature for visual mode
+map('v', '>', '>gv', {noremap = true})
+map('v', '<', '<gv', {noremap = true})
 
-map('n', 'j', "v:count  ? 'j' : 'gj'", { noremap = true, expr = true })
-map('n', 'k', "v:count  ? 'k' : 'gk'", { noremap = true, expr = true })
+-- move the cursor when the line is too long
+map('n', 'j', 'v:count  ? \'j\' : \'gj\'', {noremap = true, expr = true})
+map('n', 'k', 'v:count  ? \'k\' : \'gk\'', {noremap = true, expr = true})
 
+-- orientation in splits
 map('n', '<c-t>', ':wincmd k<CR>', optsSilent)
 map('n', '<c-h>', ':wincmd j<CR>', optsSilent)
 map('n', '<c-d>', ':wincmd h<CR>', optsSilent)
 map('n', '<c-n>', ':wincmd l<CR>', optsSilent)
 
+-- general theme
 command('set termguicolors')
 command('set encoding=UTF-8')
-
 command('set nu rnu')
-
 command([[let g:tokyonight_style = 'night' " available: night, storm]])
 command([[let g:tokyonight_enable_italic = 1"]])
-
 vim.cmd([[colorscheme NeoSolarized]])
-
 command('let g:qs_max_chars=150')
 command('set colorcolumn=80')
 
-map('v', '<leader>y', '"+y', { noremap = true })
-map('n', '<leader>p', '"+p', { noremap = true })
+-- mappings for copy and paste
+map('v', '<leader>y', '"+y', {noremap = true})
+map('n', '<leader>p', '"+p', {noremap = true})
 
-map('i', ',', ',<c-g>u', { noremap = true })
-map('i', '.', '.<c-g>u', { noremap = true })
-map('i', '!', '!<c-g>u', { noremap = true })
-map('i', '?', '?<c-g>u', { noremap = true })
+-- better undo for insert
+map('i', ',', ',<c-g>u', {noremap = true})
+map('i', '.', '.<c-g>u', {noremap = true})
+map('i', '!', '!<c-g>u', {noremap = true})
+map('i', '?', '?<c-g>u', {noremap = true})
 
-map('n', 'n', 'nzzzv', { noremap = true })
-map('n', 'N', 'Nzzzv', { noremap = true })
+-- keep the next item in select mode centered
+map('n', 'n', 'nzzzv', {noremap = true})
+map('n', 'N', 'Nzzzv', {noremap = true})
 
-map('n', 'Y', 'y$', { noremap = true })
+-- mapping for yank until the end of the line
+map('n', 'Y', 'y$', {noremap = true})
 
-map('n', '<leader>fs', ':%s//g<Left><Left>', { noremap = true })
-map('n', '<leader>s', ':s//g<Left><Left>', {})
+-- mapping to change the content of the current file
+map('n', '<leader>fs', ':%s//g<Left><Left>', {noremap = true})
+map('n', '<leader>fa', ':s//g<Left><Left>', {})
 
-map('n', '<ESC>', ':noh<CR>', { noremap = true })
+-- executes the noh command when esc is pressed
+map('n', '<ESC>', ':noh<CR>', {noremap = true})
 
-map('i', '<C-h>', '<esc>:m .+1<CR>==', { noremap = true })
-map('i', '<C-t>', '<esc>:m .-2<CR>==', { noremap = true })
-map('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true })
-map('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true })
-map('n', '<leader>j', ':m .+1<CR>==', { noremap = true })
-map('n', '<leader>k', ':m .-2<CR>==', { noremap = true })
+-- move the current line up or down
+map('i', '<C-h>', '<esc>:m .+1<CR>==', {noremap = true})
+map('i', '<C-t>', '<esc>:m .-2<CR>==', {noremap = true})
+map('v', 'J', ':m \'>+1<CR>gv=gv', {noremap = true})
+map('v', 'K', ':m \'<-2<CR>gv=gv', {noremap = true})
+map('n', '<leader>j', ':m .+1<CR>==', {noremap = true})
+map('n', '<leader>k', ':m .-2<CR>==', {noremap = true})
 
-map('n', 'ZA', ':wqa!<CR>', { noremap = true })
+-- mapping for ZA to close and save all files
+map('n', 'ZA', ':wqa!<CR>', {noremap = true})
 
-command('au BufReadPost,BufNewFile *Makefile set autoindent noexpandtab tabstop=4 shiftwidth=4')
-command('au BufReadPost,BufNewFile *.c set tabstop=2 shiftwidth=2 expandtab smarttab')
-command('au BufReadPost,BufNewFile *.cpp set tabstop=2 shiftwidth=2 expandtab smarttab')
+-- commands for identation
+command(
+    'au BufReadPost,BufNewFile *Makefile set autoindent noexpandtab tabstop=4 shiftwidth=4')
+command(
+    'au BufReadPost,BufNewFile *.c set tabstop=2 shiftwidth=2 expandtab smarttab')
+command(
+    'au BufReadPost,BufNewFile *.cpp set tabstop=2 shiftwidth=2 expandtab smarttab')
 
 command('set tabstop=2 shiftwidth=2 expandtab smarttab')
-command("let g:session_dir = '~/.config/nvim/sessions'")
-command("exec 'nnoremap <Leader>ss :Obsession ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'")
-map('n', '<leader>sp', ':Obsession<CR>', { noremap = true })
-command("exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'")
 
-command('let g:vsnip_filetypes = {}')
-command("let g:vsnip_filetypes.javascript = ['javascript']")
-command("let g:vsnip_filetypes.javascriptreact = ['javascriptreact']")
-command("let g:vsnip_filetypes.typescriptreact = ['typescriptreact']")
-command("let g:vsnip_filetypes.c = ['c']")
-command("let g:vsnip_filetypes.php = ['php']")
+-- enable or disables the Obsession plugin
+map('n', '<leader>sp', ':Obsession<CR>', {noremap = true})
 
-command("let g:sneak#label = 1")
+-- vim sneak
+command('let g:sneak#label = 1')
 
